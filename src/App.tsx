@@ -24,22 +24,25 @@ const TransactionManagement = lazy(
   () => import("./pages/admin/management/transactionmanagement")
 );
 
+import Header from "./components/header";
 function App() {
   return (
     <Router>
+      {/* Header */}
+      <Header />
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search />} />
           <Route path="/cart" element={<Cart />} />
           <Route
-            // element={
-            //   <ProtectedRoute
-            //     isAuthenticated={true}
-            //     adminRoute={true}
-            //     isAdmin={true}
-            //   />
-            // }
+          // element={
+          //   <ProtectedRoute
+          //     isAuthenticated={true}
+          //     adminRoute={true}
+          //     isAdmin={true}
+          //   />
+          // }
           >
             <Route path="/admin/dashboard" element={<Dashboard />} />
             <Route path="/admin/product" element={<Products />} />
@@ -64,7 +67,6 @@ function App() {
               element={<TransactionManagement />}
             />
           </Route>
-          
         </Routes>
       </Suspense>
     </Router>
