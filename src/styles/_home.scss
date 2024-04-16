@@ -1,0 +1,27 @@
+/* STYLING HOME PAGE */
+.home{
+    padding: 2rem 5%;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 4rem);
+    width: 100%;
+    
+    >section{
+        width: 100%;
+        height: 18.75rem;
+        margin: auto;
+        background-color: skyblue;
+    }
+
+    >h1{
+        @include heading(1px);
+        margin-top: 3rem;
+        @include flex(row,space-between,center);
+    }
+    >main{
+        width: 100%;
+        display: flex;
+        flex: 1; // 
+    }
+
+}
